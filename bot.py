@@ -166,6 +166,8 @@ class Jenney(irc.Bot):
 		class CommandInput(unicode): 
 			def __new__(cls, text, origin, bytes, match, event, args): 
 				s = unicode.__new__(cls, text)
+				s.source = origin.source
+				s.rawargs = origin.rawargs
 				s.sender = origin.sender
 				s.nick = origin.nick
 				s.event = event

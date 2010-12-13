@@ -24,7 +24,8 @@ class Origin(object):
 
 		mappings = {bot.nick: self.nick, None: None}
 		self.sender = mappings.get(target, target)
-
+		self.rawargs = args
+		self.source = source
 
 class Bot(asynchat.async_chat): 
 	def __init__(self, nick, name, channels, password=None): 
